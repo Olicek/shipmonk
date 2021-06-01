@@ -1,0 +1,29 @@
+
+parameters:
+  db:
+    driver: 'pdo_mysql'
+    host: 'mysql'
+    user: 'root'
+    password: 'secret'
+    dbname: 'packing'
+
+#
+#extensions:
+#  nettrine.extensions.oroinc: Nettrine\Extensions\Oroinc\DI\OroincBehaviorExtension
+#
+#nettrine.extensions.oroinc:
+#  driver: mysql
+
+services:
+  - App\Application
+  - App\Services\PackagingService
+  - App\Api\CachedDbpApi
+  - App\Repository\PackagingRepository
+  - App\Repository\ProductPackageRepository
+#  underscoreNamingStrategy: Doctrine\ORM\Mapping\UnderscoreNamingStrategy
+#
+#  entitiyManagerSetup: Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration([__DIR__], true, null, null, false)
+#  setup:
+#    - setNamingStrategy(@underscoreNamingStrategy)
+#
+#  entityManager: Doctrine\ORM\EntityManager::create(%db%, @entitiyManagerSetup)
